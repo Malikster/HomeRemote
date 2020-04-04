@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Home Remote</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_settings">Setari</string>
+
+    <string name="home_second">Home Second</string>
+
+    <string name="baiaMare">Baia Mare</string>
+    <string name="dressing">Dressing</string>
+    <string name="dormMare">Dormitor Mare</string>
+    <string name="holMare">Hol Mare</string>
+    <string name="holMic">Hol Mic</string>
+    <string name="living">Living</string>
+    <string name="bucatarie">Bucatarie</string>
+    <string name="dormChris">Dormitor Christina</string>
+    <string name="baieChris">Baie Christina</string>
+</resources>
