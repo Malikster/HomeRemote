@@ -1,10 +1,12 @@
 package ro.thich.homeremote;
 
 import android.os.AsyncTask;
+import android.util.Log;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.apache.http.StatusLine;
+import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
@@ -32,8 +34,8 @@ public class RequestTask extends AsyncTask<String, String, String> {
                 response.getEntity().getContent().close();
                 throw new IOException(statusLine.getReasonPhrase());
             }
-        } catch (IOException e) {
-            // Handle problems..
+        } catch (Exception e) {
+            Log.w("MyApp", "Download Exception : " + e.toString());
         }
         return responseString;
     }

@@ -17,7 +17,7 @@ import androidx.preference.PreferenceManager;
 import ro.thich.homeremote.R;
 import ro.thich.homeremote.RequestTask;
 
-@SuppressWarnings("WeakerAccess")
+//@SuppressWarnings("WeakerAccess")
 public class HomeFragment extends Fragment {
 
 //    private HomeViewModel homeViewModel;
@@ -34,6 +34,7 @@ public class HomeFragment extends Fragment {
 
     private String urlSet;
     private Boolean devSet;
+    private String urlAttr = "";
 
     private Context mContext;
 
@@ -58,6 +59,7 @@ public class HomeFragment extends Fragment {
         });*/
 
         SharedPreferences myPrefs = PreferenceManager.getDefaultSharedPreferences(mContext);
+        //RequestQueue queue = Volley.newRequestQueue(this);
         urlSet = myPrefs.getString("address", "http://192.168.1.125:8080");
         devSet = myPrefs.getBoolean("toasts", true);
 
@@ -106,7 +108,8 @@ public class HomeFragment extends Fragment {
                 } else {
                     button1.setCompoundDrawablesRelativeWithIntrinsicBounds(icon1,null, iconSun,null);
                 }
-                String urlAttr = "/?led0";
+                urlAttr = "/?led0";
+
                 new RequestTask().execute(urlSet + urlAttr);
                 if (devSet)
                     Toast.makeText(getActivity(), "Baia Mare - " + urlSet + urlAttr, Toast.LENGTH_SHORT).show();
@@ -123,7 +126,7 @@ public class HomeFragment extends Fragment {
                 } else {
                     button2.setCompoundDrawablesRelativeWithIntrinsicBounds(icon2,null, iconSun,null);
                 }
-                String urlAttr = "/?led2";
+                urlAttr = "/?led2";
                 new RequestTask().execute(urlSet + urlAttr);
                 if (devSet)
                     Toast.makeText(getActivity(), "Dressing - " + urlSet + urlAttr, Toast.LENGTH_SHORT).show();
@@ -140,7 +143,7 @@ public class HomeFragment extends Fragment {
                 } else {
                     button3.setCompoundDrawablesRelativeWithIntrinsicBounds(icon3,null, iconSun,null);
                 }
-                String urlAttr = "/?led3";
+                urlAttr = "/?led3";
                 new RequestTask().execute(urlSet + urlAttr);
                 if (devSet)
                     Toast.makeText(getActivity(), "Dormitor Mare - " + urlSet + urlAttr, Toast.LENGTH_SHORT).show();
@@ -157,7 +160,7 @@ public class HomeFragment extends Fragment {
                 } else {
                     button4.setCompoundDrawablesRelativeWithIntrinsicBounds(icon4,null, iconSun,null);
                 }
-                String urlAttr = "/?led13&led14";
+                urlAttr = "/?led13&led14";
                 new RequestTask().execute(urlSet + urlAttr);
                 if (devSet)
                     Toast.makeText(getActivity(), "Hol Mare - " + urlSet + urlAttr, Toast.LENGTH_SHORT).show();
@@ -174,7 +177,7 @@ public class HomeFragment extends Fragment {
                 } else {
                     button5.setCompoundDrawablesRelativeWithIntrinsicBounds(icon5,null, iconSun,null);
                 }
-                String urlAttr = "/?led4";
+                urlAttr = "/?led4";
                 new RequestTask().execute(urlSet + urlAttr);
                 if (devSet)
                     Toast.makeText(getActivity(), "Hol Mic - " + urlSet + urlAttr, Toast.LENGTH_SHORT).show();
@@ -191,7 +194,7 @@ public class HomeFragment extends Fragment {
                 } else {
                     button6.setCompoundDrawablesRelativeWithIntrinsicBounds(icon6,null, iconSun,null);
                 }
-                String urlAttr = "/?led8";
+                urlAttr = "/?led8";
                 new RequestTask().execute(urlSet + urlAttr);
                 if (devSet)
                     Toast.makeText(getActivity(), "Living - " + urlSet + urlAttr, Toast.LENGTH_SHORT).show();
@@ -208,7 +211,7 @@ public class HomeFragment extends Fragment {
                 } else {
                     button7.setCompoundDrawablesRelativeWithIntrinsicBounds(icon7,null, iconSun,null);
                 }
-                String urlAttr = "/?led9";
+                urlAttr = "/?led9";
                 new RequestTask().execute(urlSet + urlAttr);
                 if (devSet)
                     Toast.makeText(getActivity(), "Bucatarie - " + urlSet + urlAttr, Toast.LENGTH_SHORT).show();
@@ -226,7 +229,7 @@ public class HomeFragment extends Fragment {
                 } else {
                     button8.setCompoundDrawablesRelativeWithIntrinsicBounds(icon8,null, iconSun,null);
                 }
-                String urlAttr = "/?led10";
+                urlAttr = "/?led10";
                 new RequestTask().execute(urlSet + urlAttr);
                 if (devSet)
                     Toast.makeText(getActivity(), "Camera Christina - " + urlSet + urlAttr, Toast.LENGTH_SHORT).show();
@@ -243,7 +246,7 @@ public class HomeFragment extends Fragment {
                 } else {
                     button9.setCompoundDrawablesRelativeWithIntrinsicBounds(icon9,null, iconSun,null);
                 }
-                String urlAttr = "/?led11";
+                urlAttr = "/?led11";
                 new RequestTask().execute(urlSet + urlAttr);
                 if (devSet)
                     Toast.makeText(getActivity(), "Baie Christina - ", Toast.LENGTH_SHORT).show();
