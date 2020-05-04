@@ -8,11 +8,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.preference.PreferenceManager;
+
+import com.google.android.material.snackbar.Snackbar;
 
 import ro.thich.homeremote.R;
 import ro.thich.homeremote.RequestTask;
@@ -111,9 +112,10 @@ public class HomeFragment extends Fragment {
                 urlAttr = "/?led0";
 
                 new RequestTask().execute(urlSet + urlAttr);
-                if (devSet)
-                    Toast.makeText(getActivity(), "Baia Mare - " + urlSet + urlAttr, Toast.LENGTH_SHORT).show();
-
+                if (devSet) {
+                    //Toast.makeText(getActivity(), "Baia Mare - " + urlSet + urlAttr, Toast.LENGTH_SHORT).show();
+                    Snackbar.make(v, "Baia Mare - " + urlSet + urlAttr, Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                }
             }
         });
         button2.setOnClickListener(new View.OnClickListener() {
@@ -129,7 +131,8 @@ public class HomeFragment extends Fragment {
                 urlAttr = "/?led2";
                 new RequestTask().execute(urlSet + urlAttr);
                 if (devSet)
-                    Toast.makeText(getActivity(), "Dressing - " + urlSet + urlAttr, Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getActivity(), "Dressing - " + urlSet + urlAttr, Toast.LENGTH_SHORT).show();
+                    Snackbar.make(v, "Dressing - " + urlSet + urlAttr, Snackbar.LENGTH_LONG).setAction("Action", null).show();
 
             }
         });
@@ -146,7 +149,8 @@ public class HomeFragment extends Fragment {
                 urlAttr = "/?led3";
                 new RequestTask().execute(urlSet + urlAttr);
                 if (devSet)
-                    Toast.makeText(getActivity(), "Dormitor Mare - " + urlSet + urlAttr, Toast.LENGTH_SHORT).show();
+                    Snackbar.make(v, "Dormitor Mare - " + urlSet + urlAttr, Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                //Toast.makeText(getActivity(), "Dormitor Mare - " + urlSet + urlAttr, Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -163,7 +167,8 @@ public class HomeFragment extends Fragment {
                 urlAttr = "/?led13&led14";
                 new RequestTask().execute(urlSet + urlAttr);
                 if (devSet)
-                    Toast.makeText(getActivity(), "Hol Mare - " + urlSet + urlAttr, Toast.LENGTH_SHORT).show();
+                    Snackbar.make(v, "Hol Mare - " + urlSet + urlAttr, Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                //Toast.makeText(getActivity(), "Hol Mare - " + urlSet + urlAttr, Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -180,7 +185,8 @@ public class HomeFragment extends Fragment {
                 urlAttr = "/?led4";
                 new RequestTask().execute(urlSet + urlAttr);
                 if (devSet)
-                    Toast.makeText(getActivity(), "Hol Mic - " + urlSet + urlAttr, Toast.LENGTH_SHORT).show();
+                    Snackbar.make(v, "Hol Mic - " + urlSet + urlAttr, Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                //Toast.makeText(getActivity(), "Hol Mic - " + urlSet + urlAttr, Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -197,7 +203,8 @@ public class HomeFragment extends Fragment {
                 urlAttr = "/?led8";
                 new RequestTask().execute(urlSet + urlAttr);
                 if (devSet)
-                    Toast.makeText(getActivity(), "Living - " + urlSet + urlAttr, Toast.LENGTH_SHORT).show();
+                    Snackbar.make(v, "Living - " + urlSet + urlAttr, Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                //Toast.makeText(getActivity(), "Living - " + urlSet + urlAttr, Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -214,7 +221,8 @@ public class HomeFragment extends Fragment {
                 urlAttr = "/?led9";
                 new RequestTask().execute(urlSet + urlAttr);
                 if (devSet)
-                    Toast.makeText(getActivity(), "Bucatarie - " + urlSet + urlAttr, Toast.LENGTH_SHORT).show();
+                    Snackbar.make(v, "Bucatarie - " + urlSet + urlAttr, Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                //Toast.makeText(getActivity(), "Bucatarie - " + urlSet + urlAttr, Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -232,7 +240,8 @@ public class HomeFragment extends Fragment {
                 urlAttr = "/?led10";
                 new RequestTask().execute(urlSet + urlAttr);
                 if (devSet)
-                    Toast.makeText(getActivity(), "Camera Christina - " + urlSet + urlAttr, Toast.LENGTH_SHORT).show();
+                    Snackbar.make(v, "Camera Christina - " + urlSet + urlAttr, Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                //Toast.makeText(getActivity(), "Camera Christina - " + urlSet + urlAttr, Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -249,7 +258,8 @@ public class HomeFragment extends Fragment {
                 urlAttr = "/?led11";
                 new RequestTask().execute(urlSet + urlAttr);
                 if (devSet)
-                    Toast.makeText(getActivity(), "Baie Christina - ", Toast.LENGTH_SHORT).show();
+                    Snackbar.make(v, "Baie Christina - " + urlSet + urlAttr, Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                //Toast.makeText(getActivity(), "Baie Christina - ", Toast.LENGTH_SHORT).show();
 
             }
         });
