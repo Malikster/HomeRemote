@@ -2,14 +2,21 @@
 <androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     android:key="myPrefs">
     <PreferenceCategory android:title="Setari Iluminat">
+    <EditTextPreference
+        android:defaultValue="http://192.168.1.125:8080"
+        android:key="lightAddress"
+        android:summary="Please provide server address"
+        android:title="Adresa ip iluminat" />
+</PreferenceCategory>
+    <PreferenceCategory android:title="Setari pompa">
         <EditTextPreference
-            android:defaultValue="http://192.168.1.125:8080"
-            android:key="address"
+            android:defaultValue="http://192.168.1.126:8080"
+            android:key="pompAddress"
             android:summary="Please provide server address"
-            android:title="Adresa ip iluminat" />
+            android:title="Adresa ip pompa caldura" />
         <CheckBoxPreference
             android:defaultValue="false"
-            android:key="applicationUpdates"
+            android:key="pomp"
             android:summary="Apasa pentru a porni sau a opri pompa."
             android:title="Pornire/Oprire Pompa" />
     </PreferenceCategory>

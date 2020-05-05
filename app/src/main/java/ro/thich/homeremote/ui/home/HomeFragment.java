@@ -61,7 +61,7 @@ public class HomeFragment extends Fragment {
 
         SharedPreferences myPrefs = PreferenceManager.getDefaultSharedPreferences(mContext);
         //RequestQueue queue = Volley.newRequestQueue(this);
-        urlSet = myPrefs.getString("address", "http://192.168.1.125:8080");
+        urlSet = myPrefs.getString("lightAddress", "http://192.168.1.125:8080");
         devSet = myPrefs.getBoolean("toasts", true);
 
 
