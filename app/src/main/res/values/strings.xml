@@ -23,4 +23,8 @@
     <string name="bucatarie">Bucatarie</string>
     <string name="dormChris">Dormitor Christina</string>
     <string name="baieChris">Baie Christina</string>
+    <string name="menu_version">Version</string>
+    <string name="version">Version : </string>
+    <string name="versionname">VersionName</string>
+    <string name="todo">TODO</string>
 </resources>

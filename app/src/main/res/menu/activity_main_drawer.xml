@@ -21,4 +21,10 @@
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/menu_settings" />
     </group>
+    <group>
+        <item
+            android:id="@+id/nav_version"
+            android:title="@string/version"
+            android:icon="@android:drawable/gallery_thumb" />
+    </group>
 </menu>

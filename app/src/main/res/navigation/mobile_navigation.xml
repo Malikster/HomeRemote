@@ -43,7 +43,7 @@
         tools:layout="@layout/fragment_slideshow" />
 
     <fragment
-        android:id="@+id/nav_settings"
-        android:name="ro.thich.homeremote.ui.settings.SettingsFragment"
-        android:label="@string/menu_settings"/>
+    android:id="@+id/nav_settings"
+    android:name="ro.thich.homeremote.ui.settings.SettingsFragment"
+    android:label="@string/menu_settings"/>
 </navigation>
