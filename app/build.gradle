@@ -2,29 +2,35 @@
 apply plugin: 'com.android.application'
 
 android {
+
     signingConfigs {
         release {
             storeFile file('E:\\Android\\Projects\\keys\\release.jks')
             storePassword 'release'
-            keyAlias "release"
+            keyAlias = 'release'
             keyPassword 'release'
         }
-        debug {
-            storeFile file('E:\\Android\\Projects\\keys\\debug.jks')
-            storePassword 'debugdebug'
-            keyAlias "debug"
-            keyPassword 'debugdebug'
-        }
     }
-
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
     packagingOptions {
         exclude 'META-INF/DEPENDENCIES'
     }
 
+    def bType = ".release"
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+        }
+        debug {
+
+        }
+    }
+
     // Read version information from local file and increment as appropriate
-    def bType
+
     def versionPropsFile = file('version.properties')
     def versionMajor
     def versionMinor
@@ -35,24 +41,26 @@ android {
 
         versionProps.load(new FileInputStream(versionPropsFile))
 
-        versionMajor = versionProps['VERSION_MAJOR'].toInteger()
-        versionMinor = versionProps['VERSION_MINOR'].toInteger()
-        versionBuild = versionProps['VERSION_BUILD'].toInteger() + 1
+        if( bType == ".debug" ) {
+            versionMajor = versionProps['VERSION_MAJOR'].toInteger()
+            versionMinor = versionProps['VERSION_MINOR'].toInteger()
+            versionBuild = versionProps['VERSION_BUILD'].toInteger() + 1
+        }
+        else if( bType == ".release" ) {
+            versionMajor = versionProps['VERSION_MAJOR'].toInteger()
+            versionMinor = versionProps['VERSION_MINOR'].toInteger() + 1
+            versionBuild = versionProps['VERSION_BUILD'].toInteger()
+        }
+        else {
+            versionMajor = versionProps['VERSION_MAJOR'].toInteger()
+            versionMinor = versionProps['VERSION_MINOR'].toInteger()
+            versionBuild = versionProps['VERSION_BUILD'].toInteger()
+        }
+
 
         // Update the build number in the local file
         versionProps['VERSION_BUILD'] = versionBuild.toString()
         versionProps.store(versionPropsFile.newWriter(), null)
-    }
-
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            bType = '.release'
-        }
-        debug {
-            bType = '.debug'
-        }
     }
 
     defaultConfig {
