@@ -10,10 +10,7 @@ android {
             keyPassword 'release'
         }
     }
-    def buildType
-    applicationVariants.all { variant ->
-        buildType = variant.buildType.name // sets the current build type
-    }
+
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
     packagingOptions {
@@ -21,10 +18,20 @@ android {
     }
 
     // Read version information from local file and increment as appropriate
+    def bType
     def versionPropsFile = file('version.properties')
     def versionMajor
     def versionMinor
     def versionBuild
+    applicationVariants.all { variant ->
+        def buildType = variant.buildType.name // sets the current build type
+        if( buildType == "debug" ) {
+            bType = "debug"
+        }
+        else if( buildType == "release" ) {
+            bType = "release"
+        }
+    }
     if (versionPropsFile.canRead()) {
         Properties versionProps = new Properties()
 
@@ -44,7 +51,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 29
         versionCode versionBuild
-        versionName "${versionMajor}.${versionMinor}.${versionBuild}-${buildType}"
+        versionName "${versionMajor}.${versionMinor}.${versionBuild}-${bType}"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         signingConfig signingConfigs.release
