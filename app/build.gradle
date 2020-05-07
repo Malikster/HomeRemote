@@ -2,6 +2,14 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        release {
+            storeFile file('E:\\Android\\Projects\\keys\\release.jks')
+            storePassword 'release'
+            keyAlias "release"
+            keyPassword 'release'
+        }
+    }
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
     packagingOptions {
@@ -35,6 +43,7 @@ android {
         versionName "${versionMajor}.${versionMinor}.${versionBuild}"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        signingConfig signingConfigs.release
     }
 
     buildTypes {
