@@ -1,3 +1,4 @@
+//noinspection DuplicatePlatformClasses
 apply plugin: 'com.android.application'
 
 android {
@@ -64,4 +65,8 @@ dependencies {
     implementation 'org.apache.httpcomponents:httpcore:4.4.13'
     //noinspection DuplicatePlatformClasses
     implementation 'org.apache.httpcomponents:httpclient:4.5.12'
+}
+
+configurations {
+    all*.exclude group: 'commons-logging', module: 'commons-logging'
 }

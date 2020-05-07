@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <issue id="IconLocation">
+        <ignore path="src/main/res/drawable/ic_launcher.png" />
+        <ignore path="src/main/res/drawable/iconfinder_bathtub.png" />
+        <ignore path="src/main/res/drawable/iconfinder_bed.png" />
+        <ignore path="src/main/res/drawable/iconfinder_bed.png" />
+        <ignore path="src/main/res/drawable/iconfinder_coffee_cup.png" />
+        <ignore path="src/main/res/drawable/iconfinder_couple.png" />
+        <ignore path="src/main/res/drawable/iconfinder_furniture_living_room_home_house_offie.png" />
+        <ignore path="src/main/res/drawable/iconfinder_sun.png" />
+        <ignore path="src/main/res/drawable/iconfinder_sun_glow.png" />
+        <ignore path="src/main/res/drawable/iconfinder_triple_seat_sofa.png" />
+    </issue>
+</lint>
