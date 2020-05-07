@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private AppBarConfiguration mAppBarConfiguration;
 
     //int versionCode = BuildConfig.VERSION_CODE;
+    @SuppressWarnings({"WeakerAccess", "CanBeFinal"})
     String versionName = BuildConfig.VERSION_NAME;
 
     @Override

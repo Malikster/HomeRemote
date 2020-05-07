@@ -19,6 +19,7 @@ import ro.thich.homeremote.R;
 import ro.thich.homeremote.RequestTask;
 
 
+@SuppressWarnings("WeakerAccess")
 public class HomeFragment extends Fragment {
 
 //    private HomeViewModel homeViewModel;
