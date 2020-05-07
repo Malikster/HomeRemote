@@ -9,6 +9,12 @@ android {
             keyAlias "release"
             keyPassword 'release'
         }
+        debug {
+            storeFile file('E:\\Android\\Projects\\keys\\debug.jks')
+            storePassword 'debugdebug'
+            keyAlias "debug"
+            keyPassword 'debugdebug'
+        }
     }
 
     compileSdkVersion 29
@@ -23,15 +29,7 @@ android {
     def versionMajor
     def versionMinor
     def versionBuild
-    applicationVariants.all { variant ->
-        def buildType = variant.buildType.name // sets the current build type
-        if( buildType == "debug" ) {
-            bType = "debug"
-        }
-        else if( buildType == "release" ) {
-            bType = "release"
-        }
-    }
+
     if (versionPropsFile.canRead()) {
         Properties versionProps = new Properties()
 
@@ -46,22 +44,26 @@ android {
         versionProps.store(versionPropsFile.newWriter(), null)
     }
 
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            bType = '.release'
+        }
+        debug {
+            bType = '.debug'
+        }
+    }
+
     defaultConfig {
         applicationId "ro.thich.homeremote"
         minSdkVersion 21
         targetSdkVersion 29
         versionCode versionBuild
-        versionName "${versionMajor}.${versionMinor}.${versionBuild}-${bType}"
+        versionName "${versionMajor}.${versionMinor}.${versionBuild}${bType}"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         signingConfig signingConfigs.release
-    }
-
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
     }
 
 }
